@@ -21,7 +21,7 @@ let { description, description2, license, questions, questions2  } = await inqui
             type: 'list',
             message: 'Select your license:',
             name: 'license',
-            choices: ['Jumbo', 'Large', 'Standard', 'Medium', 'Small', 'Micro'],
+            choices: ['License1', 'License2', 'License3'],
             filter(val) {
                 return val.toLowerCase();
             }
@@ -48,7 +48,7 @@ let readmeText = `# Project Description
     ${description2}
     ## The second largest heading
     
-    ${generateLicense(license)}
+    ${license}
     
     ###### The smallest heading
     ${questions}
@@ -60,15 +60,27 @@ fs.writeFile("README.md", readmeText)
 
 
 function generateLicense(license) {
-    console.log(license)
+    console.log(license);
 
-    if(license === "Jumbo"){
+    if(license === "License1"){
         
-        return ""
+        return "License1"
         
     }
 
+    if(license === "License2"){
+        
+        return "License2"
+        
+    }
 
+    if(license === "License3"){
+        
+        return "License3"
+        
+    }
+
+    
 
 }
 
